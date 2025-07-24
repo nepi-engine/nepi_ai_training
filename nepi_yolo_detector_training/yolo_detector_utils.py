@@ -334,7 +334,7 @@ def update_train_files(project_dict,label_folder,train_folder):
 
 def write_model_yaml_file(project_dict,output_file_path):
     success = False
-    framework = project_dict['BASE_MODEL'].split('.pt')[1].replace('v','V')
+    framework = project_dict['BASE_MODEL'].split('.pt')[0][:-1]
     weight_file = os.path.basename(output_file_path).replace('.yaml','.pt')
     ### Create dictionary
     data = {

@@ -1,4 +1,4 @@
-# This repository contains scripts and instructions for creating custom AI models for NEPI supported AI frameworks.
+# This repository contains libraries and scripts for creating custom AI models for NEPI supported AI frameworks.
 
 # While the repo contains a CMakeLists file for deploying the scrips into a NEPI devices software system for application developers,
 # the main use case is to deploy the repo into an ai training folder on a computer stand alone to support rapid model training

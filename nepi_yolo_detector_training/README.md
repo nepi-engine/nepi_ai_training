@@ -1,6 +1,9 @@
-# The following tutorial walks through
-# A) Setting up a custom ai yolo image detection model training environment
-# B) Setting up a custom ai yolo image model project
+# This repository contains libraries, scripts and other utilities for creating custom AI detection models for Yolo based frameworks.
+# The process has been tested with both YoloV8 and YoloV11 models
+
+# The following instructions walk through
+# A) Setting up the model training environment
+# B) Setting up a custom model training project
 # C) Training a custom ai yolo image model
 # D) Testing the custom model
 # E) Retraining the custom model

@@ -1,0 +1,20 @@
+--2025-07-23 16:11:07--  https://www.dropbox.com/scl/fi/wri9vqhr81jjh78lx13nr/yolo_detector_base_models.zip?rlkey=6tmqaqwb09wwy30g6k568f3zv
+Resolving www.dropbox.com (www.dropbox.com)... 2620:100:6016:18::a27d:112, 162.125.1.18
+Connecting to www.dropbox.com (www.dropbox.com)|2620:100:6016:18::a27d:112|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com/cd/0/inline/CuD_I_ngswWy5tXlnLnSNK1KrMkpr8vq5xxzMtWwuQJdhR2YNXMnT8tCJYZrCc_jIxFjmTw4a_XgiFB0vtcVcpij5tJ-a7EU3K5gJJLyYbzMmKiEBWIxWk7thwwr3jqIwBdCD0AfH-6vS5IUad77cO1Z/file# [following]
+--2025-07-23 16:11:07--  https://uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com/cd/0/inline/CuD_I_ngswWy5tXlnLnSNK1KrMkpr8vq5xxzMtWwuQJdhR2YNXMnT8tCJYZrCc_jIxFjmTw4a_XgiFB0vtcVcpij5tJ-a7EU3K5gJJLyYbzMmKiEBWIxWk7thwwr3jqIwBdCD0AfH-6vS5IUad77cO1Z/file
+Resolving uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com (uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com)... 2620:100:6016:15::a27d:10f, 162.125.1.15
+Connecting to uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com (uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com)|2620:100:6016:15::a27d:10f|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: /cd/0/inline2/CuCzrVlhLtWuJpu8fdFgb7fNVu0nhHnfuG9LaK7-wXxa2Mu9V1jL5QaECrtwbn717wOq0KCoE1yQFNJrzCmCWRSDehkgCkkb4mYfCwT9EU3IxwXSh9hP5TGvHsZSe1Y4yrzg_QeCHxoEE9FC7pBY_ppfZ7oB6kUiBRzdd2vkipBTSS5_LY0lI_oA-RZDnrVNP-d9es7vZWBA7g7idcFHCQMrClhRPQUNy__G6sV6jrP9KLJIsqegLk-5QZRF8eWLd0CPIeODX_P8Dhqx8stvy1yebG1NZHVyKRcUwzEkSfyRo35KJm1hW8Tl-bqJpHQYvLsObyvGoEELPxqpyqIY9kajAYdr-IDfoxPz1mRFECNKQeE6LXVV_b7AdLLyqOE7RkU/file [following]
+--2025-07-23 16:11:08--  https://uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com/cd/0/inline2/CuCzrVlhLtWuJpu8fdFgb7fNVu0nhHnfuG9LaK7-wXxa2Mu9V1jL5QaECrtwbn717wOq0KCoE1yQFNJrzCmCWRSDehkgCkkb4mYfCwT9EU3IxwXSh9hP5TGvHsZSe1Y4yrzg_QeCHxoEE9FC7pBY_ppfZ7oB6kUiBRzdd2vkipBTSS5_LY0lI_oA-RZDnrVNP-d9es7vZWBA7g7idcFHCQMrClhRPQUNy__G6sV6jrP9KLJIsqegLk-5QZRF8eWLd0CPIeODX_P8Dhqx8stvy1yebG1NZHVyKRcUwzEkSfyRo35KJm1hW8Tl-bqJpHQYvLsObyvGoEELPxqpyqIY9kajAYdr-IDfoxPz1mRFECNKQeE6LXVV_b7AdLLyqOE7RkU/file
+Reusing existing connection to [uc21dba3aba63cc41109ad6f79a2.dl.dropboxusercontent.com]:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 263514767 (251M) [application/zip]
+Saving to: ‘yolo_detector_base_models.zip?rlkey=6tmqaqwb09wwy30g6k568f3zv’
+
+          yolo_dete   0%[                    ]       0  --.-KB/s                        yolo_detec   5%[>                   ]  12.89M  64.5MB/s                       yolo_detect  13%[=>                  ]  34.99M  87.5MB/s                      yolo_detecto  19%[==>                 ]  48.29M  80.5MB/s                     yolo_detector  28%[====>               ]  70.41M  88.0MB/s                    yolo_detector_  36%[======>             ]  92.51M  92.5MB/s                   yolo_detector_b  45%[========>           ] 114.62M  95.5MB/s                  yolo_detector_ba  54%[=========>          ] 136.73M  97.6MB/s                 yolo_detector_bas  63%[===========>        ] 158.85M  99.3MB/s                yolo_detector_base  72%[=============>      ] 180.96M   101MB/s               yolo_detector_base_  80%[===============>    ] 203.07M   102MB/s               olo_detector_base_m  89%[================>   ] 225.18M   102MB/s               lo_detector_base_mo  98%[==================> ] 247.29M   103MB/s               yolo_detector_base_ 100%[===================>] 251.31M   103MB/s    in 2.4s    
+
+2025-07-23 16:11:11 (103 MB/s) - ‘yolo_detector_base_models.zip?rlkey=6tmqaqwb09wwy30g6k568f3zv’ saved [263514767/263514767]
+

@@ -1,0 +1,16 @@
+
+
+MODEL_NAME: light_bulb
+DESCRIPTION: light bulb object detector
+CLASSES:
+  - Can
+  - Lamp
+
+USE_PERCENT_DATA: 100
+RANDOM_DATA_SIZE: 100
+USE_BEST_MODEL: true 
+
+BASE_MODEL: yolov8m.pt
+IMAGE_SIZE: 640
+NUM_EPOCHS: 300 
+BATCH_SIZE: 8

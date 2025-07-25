@@ -9,34 +9,20 @@ License: 3-clause BSD, see https://opensource.org/licenses/BSD-3-Clause
 cmake_minimum_required(VERSION 2.8.3)
 project(nepi_ai_training)
 
-## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++14)
-add_compile_options(-Wall)
-
-# Following relies (sometimes, e.g., Jetpack-installed OpenCV) on a symlink from /usr/share/OpenCV to
-# true OpenCV cmake folder (e.g., usr/lib/aarch64-linux-gnu/cmake/opencv4 on Jetson)
-set(OpenCV_DIR /usr/share/OpenCV)
-
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-## Note that using COMPONENTS here ensures that the package environment variables
-## are combined into the generic corresponding catkin_<ENV_VARIABLE> stuff, so, for example
-## we don't need to explicitly link OpenCV_LIBRARIES, instead just link to catkin_LIBRARIES and
-## get OpenCV for free (same holds for catkin_INCLUDE_DIRS, etc.)
-find_package(catkin REQUIRED COMPONENTS nepi_sdk)
+find_package(catkin REQUIRED
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-find_package(PkgConfig)
 
-## Use the verbose version of make
-#set(CMAKE_VERBOSE_MAKEFILE ON)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-catkin_python_setup()
+# catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -80,7 +66,7 @@ catkin_python_setup()
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  
+ 
 )
 
 

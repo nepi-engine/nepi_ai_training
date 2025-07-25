@@ -14,7 +14,7 @@ PROJECT_NAME="LaserLines"
 PROJECT_FOLDER="./../../${PROJECT_NAME}"
 
 # Avoid pushing local build artifacts, git stuff, and a bunch of huge GPSD stuff
-RSYNC_EXCLUDES=" --exclude README* --exclude LICENSE* "
+RSYNC_EXCLUDES=" --exclude LICENSE* "
 
 
 echo "Excluding ${RSYNC_EXCLUDES}"

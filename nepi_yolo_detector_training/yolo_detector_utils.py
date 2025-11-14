@@ -265,10 +265,10 @@ def update_train_files(project_dict,label_folder,train_folder):
     ind = 0
     data_val_size = int(float(1)/float(VAL_DATA_PERCENTAGE) * data_size)
     val_indexes = random.sample(range(data_size), k=data_val_size)
-    print("created val_data indexes: " + str(val_indexes))
+    #print("created val_data indexes: " + str(val_indexes))
     data_test_size = int(float(1)/float(TEST_DATA_PERCENTAGE) * data_size)
     test_indexes = random.sample(range(data_size), k=data_test_size)
-    print("created test_data indexes: " + str(test_indexes))
+    #print("created test_data indexes: " + str(test_indexes))
     files = os.listdir(folder)
     #print("Found " + str(len(files)) + " files in folder")
     #print('Found image files: ' + str(files))
@@ -286,10 +286,10 @@ def update_train_files(project_dict,label_folder,train_folder):
             #print('Found label file' + label_file)
             ind += 1
             if ind in val_indexes and image_file not in exist_files: ##### FINISH THIS
-              print('Adding image to val file list')
+              #print('Adding image to val file list')
               val_files.append(image_file)
             elif ind in test_indexes and image_file not in exist_files: 
-              print('Adding image to test file list')
+              #print('Adding image to test file list')
               test_files.append(image_file)
             elif image_file not in exist_files: 
               #print('Adding image to train file list')

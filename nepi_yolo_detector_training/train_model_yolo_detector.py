@@ -20,6 +20,7 @@ try:
     import copy
     from ultralytics import YOLO
     import torch 
+    import shutil
 
 except Exception as e:
     print("Missing required python modules " + str(e))

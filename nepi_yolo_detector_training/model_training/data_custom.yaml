@@ -1,0 +1,7 @@
+path: not_set
+train: not_set
+val: not_set
+test: not_set
+nc: 1
+names:
+- not_set

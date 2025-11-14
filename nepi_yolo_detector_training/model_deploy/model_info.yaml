@@ -1,0 +1,18 @@
+ai_model:
+  framework:
+    name: yolov8
+  type:
+    name: detection
+  description:
+    name: light bulb object detector
+  weight_file:
+    name: light_bulb_yolov8m_640.pt
+  image_size:
+    image_width:
+      value: 640
+    image_height:
+      value: 640
+  classes:
+    names:
+    - Can
+    - Lamp

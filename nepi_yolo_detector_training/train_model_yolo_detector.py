@@ -138,7 +138,7 @@ if __name__ == "__main__":
     
         if last_dict['BASE_MODEL'] != project_dict['BASE_MODEL']:
             print("Resetting training session for new base model: " + project_dict['BASE_MODEL'])
-            for folder in get_folder_list(train_folder):
+            for folder in ai_utils.get_folder_list(train_folder):
                 try:
                     shutil.rmtree(folder)
                     print(f"Old Training Folder '{folder}' and its contents deleted successfully.")

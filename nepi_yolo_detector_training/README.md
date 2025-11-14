@@ -68,25 +68,7 @@ sudo pip3 install -r requirements.txt
 pip install intel-extension-for-pytorch
 
 
-#########
-### Install additional base model files
-# The nepi_ai_training repo includes two small yolo base models
-# yolov8n.pt (nano) and yolov11n.pt (nano), but you can download additional models
-# that include small, medium, and large versions of these base models for
-# more accurate (but slower and higher resource) models
 
-cd model_training
-
-wget 'https://www.dropbox.com/scl/fi/wri9vqhr81jjh78lx13nr/yolo_detector_base_models.zip?rlkey=6tmqaqwb09wwy30g6k568f3zv&st=k4rza4b3&dl=0' -O yolo_detector_base_models.zip
-
-unzip yolo_detector_base_models.zip
-
-rm yolo_detector_base_models.zip
-ls
-cd ..
-
-# NOTE: Find information on the different start model options at this link:
-# https://docs.ultralytics.com/tasks/detect/#models
 
 
 
@@ -95,32 +77,40 @@ cd ..
 ########################################
 
 #########
-### Edit and run the 'project_setup.sh' script
-# In the 'nepi_yolo_detector_training' folder, open the 'project_setup.sh' file.
-# 
+### Run the 'project_setup.sh' script to create a new training project with
+# the name of the project folder you want, or leave blank for defualt.
 
-nano setup_project_folder.sh
+./setup_project_folder.sh "my_train_project"
 
-# Set the 'PROJECT_NAME=' variable to the folder name you want for your project
-# Example
-PROJECT_NAME="LightBulbs"
-
-# Save the file
-
-### Run the script
-# open terminal in the same folder and run
-
-sudo chmod 755 setup_project_folder.sh
-./setup_project_folder.sh
-cd ./../../${PROJECT_NAME}
-ls
-
-# You should see a number of files transfered from the 'nepi_yolo_detector_training' folder
+# This will create and populate a new training project in the same
+# folder the nepi_ai_training folder is located in.
 
 
 ########################################
 ### PROJECT INITIALIZATION #######
 ########################################
+
+#########
+# The new project folder includes the Yolov8 Tiny base model (yolov8n.pt).  
+
+### OPTIONAL ###
+# Install additional base model files that include 
+# small, medium, and large versions for
+# more accurate (but slower and higher resource) models
+
+  cd model_training
+
+  wget 'https://www.dropbox.com/scl/fi/wri9vqhr81jjh78lx13nr/yolo_detector_base_models.zip?rlkey=6tmqaqwb09wwy30g6k568f3zv&st=k4rza4b3&dl=0' -O yolo_detector_base_models.zip
+
+  unzip yolo_detector_base_models.zip
+
+  rm yolo_detector_base_models.zip
+  ls
+  cd ..
+
+  # NOTE: Find information on the different start model options at this link:
+  # https://docs.ultralytics.com/tasks/detect/#models
+
 
 
 #########
@@ -188,9 +178,6 @@ BATCH_SIZE: 8
 # Open terminal in the same folder and run
 
 sudo python initialize_project_yolo_detector.py
-
-# You should see a number of files transfered from the 'nepi_yolo_detector_training' folder
-
 
 
 #########

@@ -169,5 +169,5 @@ if __name__ == "__main__":
             #print("Training with device: " + str(device))
             #model = model.to(device)
             print("Model Train Inputs: " + str([train_file, num_epochs, img_size, batch_size,model_name]))
-            results = model.train.detach(data=train_file, epochs=num_epochs, imgsz=img_size, batch=batch_size, workers=num_workers, name=model_name)
+            results = model.train(data=train_file, epochs=num_epochs, imgsz=img_size, batch=batch_size, workers=num_workers, name=model_name)
     success = ai_utils.fix_folder_permissions(train_folder,project.user,project.group)

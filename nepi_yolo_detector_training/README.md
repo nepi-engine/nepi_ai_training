@@ -148,7 +148,8 @@ ls
 #E) If you would like to create a random set of images to test with initially,
 # set the 'RANDOM_DATA_SIZE' field to the number of random test images you want to work with.
 
-#F) Select a starting model from the 'model_training' folder to use for your first training session
+#F) Select a starting model (model.pt) from the 'model_training' folder to use for your first training session
+# NOTE: Larger model sizes require more GPU memory.  If your training session is crashing, try a smaller model.
 # NOTE: Additional training sessions will use the last best model in the model_training folder as the start model
 # Find information on the different start model options at this link:
 # https://docs.ultralytics.com/tasks/detect/#models
@@ -177,7 +178,7 @@ USE_PERCENT_DATA: 100
 RANDOM_DATA_SIZE: 100
 USE_BEST_MODEL: true 
 
-BASE_MODEL: yolov8m.pt
+BASE_MODEL: yolov8n.pt
 IMAGE_SIZE: 640
 NUM_EPOCHS: 300 
 BATCH_SIZE: 8

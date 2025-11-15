@@ -16,7 +16,7 @@ sudo -v
 if [[ -n "$1" ]]; then
   PROJECT_NAME="$1"
 else
-  PROJECT_NAME=yolov8_train_project
+  PROJECT_NAME=yolo_train_project
 fi
 
 PROJECT_FOLDER="$(dirname $(dirname $(pwd)))/${PROJECT_NAME}"

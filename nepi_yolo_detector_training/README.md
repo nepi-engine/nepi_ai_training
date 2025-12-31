@@ -73,7 +73,6 @@ you want to train on and install training required software.
 **NOTE:** Make sure your device is connected to the internet
 
   cd nepi_yolo_detector_training
-  sudo apt install python3-pyqt5
   sudo pip3 install -r requirements.txt
 
 **NOTE:** If you are training on an Intel xpu, also run 'pip install intel-extension-for-pytorch'

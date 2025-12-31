@@ -56,7 +56,16 @@ the repo on a PC and copy the 'ai_training' folder.
   cd nepi_ai_training
 
 #########
-### Install the python requirements 
+### Install the image annotation software 
+
+**NOTE:** Make sure your device is connected to the internet
+
+  ./annotation_software_setup.sh
+
+**NOTE:** After this process both label-studio and labelImg software packages will be installed.
+
+#########
+### Install the framework python requirements 
 
 Change to the AI model framework folder in the nepi_ai_training repo
 you want to train on and install training required software.

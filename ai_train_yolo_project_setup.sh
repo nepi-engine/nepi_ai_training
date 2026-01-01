@@ -19,7 +19,7 @@ else
   PROJECT_NAME=yolo_train_project
 fi
 
-PROJECT_FOLDER="$(dirname $(pwd))/${PROJECT_NAME}"
+export PROJECT_FOLDER="$(dirname $(pwd))/${PROJECT_NAME}"
 
 if [[ -d "$PROJECT_FOLDER" ]]; then
   echo "Project folder allready exists at ${PROJECT_FOLDER}, will update process scripts"

@@ -40,6 +40,7 @@ else
 if [[ -d "$PROJECT_FOLDER" ]]; then
   sudo chown -R ${USER}:${USER} $PROJECT_FOLDER
   sudo chmod -R +x $PROJECT_FOLDER
-  cd $PROJECT_FOLDER
+  echo "Changing directory to proect folder ${PROJECT_FOLDER}"
+  cd ${PROJECT_FOLDER}
   ls
 fi

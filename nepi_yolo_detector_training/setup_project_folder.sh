@@ -22,7 +22,12 @@ fi
 PROJECT_FOLDER="$(dirname $(dirname $(pwd)))/${PROJECT_NAME}"
 
 if [[ -d "$PROJECT_FOLDER" ]]; then
-  echo "Project folder allready exists at ${PROJECT_FOLDER}"
+  echo "Project folder allready exists at ${PROJECT_FOLDER}, will update process scripts"
+  RSYNC_EXCLUDES=" --exclude project_settings.yaml"
+  echo "Excluding ${RSYNC_EXCLUDES}"
+  rsync -arh ${RSYNC_EXCLUDES} $(pwd)/* ${PROJECT_FOLDER}/
+  sudo cp -r $(dirname $(pwd))/src/nepi_ai_training/* ${PROJECT_FOLDER}/
+
 else
   sudo mkdir $PROJECT_FOLDER
   sudo cp -r $(pwd)/* ${PROJECT_FOLDER}/
@@ -31,3 +36,8 @@ else
   sudo chmod -R +x $PROJECT_FOLDER
   echo "Project folder created at ${PROJECT_FOLDER}"
  fi
+
+if [[ -d "$PROJECT_FOLDER" ]]; then
+  cd $PROJECT_FOLDER
+  ls
+fi

@@ -84,9 +84,6 @@ the name of the project folder you want.
 This will create and populate a new training project in the same
 folder the nepi_ai_training repo is located in.
 
-  cd ./../../${PROJECT_NAME}
-  ls
-
 The new project folder includes a base training model 
 (Yolov8 Tiny yolov8n.pt) in the model_folder.  
 

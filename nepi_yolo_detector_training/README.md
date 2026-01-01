@@ -55,27 +55,19 @@ the repo on a PC and copy the 'ai_training' folder.
   git clone https://github.com/nepi-engine/nepi_ai_training
   cd nepi_ai_training
 
-#########
-### Install the image annotation software 
-
-**NOTE:** Make sure your device is connected to the internet
-
-  ./annotation_software_setup.sh
-
-**NOTE:** After this process both label-studio and labelImg software packages will be installed.
 
 #########
-### Install the framework python requirements 
+### Install the ai training software requirements 
 
-Change to the AI model framework folder in the nepi_ai_training repo
-you want to train on and install training required software.
+Make sure your device is connected to the internet
 
-**NOTE:** Make sure your device is connected to the internet
-
-  cd nepi_yolo_detector_training
-  sudo pip3 install -r requirements.txt
+**NOTE:** If software needs to be installed, the process step "Building wheel for lxml (pyproject.toml) may take a while, so let it run to completion.
 
 **NOTE:** If you are training on an Intel xpu, also run 'pip install intel-extension-for-pytorch'
+  
+  ./ai_train_env_setup.sh
+
+**NOTE:** After this process both label-studio and labelImg software packages will be installed.
 
 
 ########################################

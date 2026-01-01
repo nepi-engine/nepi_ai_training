@@ -75,11 +75,12 @@ Make sure your device is connected to the internet
 ########################################
 
 
+
 ### Run the 'project_setup.sh' script to create a new training project with
 the name of the project folder you want.
 
   PROJECT_NAME=my_project_name
-  ./setup_project_folder.sh $PROJECT_NAME
+  ./ai_train_project_setup.sh $PROJECT_NAME
 
 This will create and populate a new training project in the same
 folder the nepi_ai_training repo is located in.

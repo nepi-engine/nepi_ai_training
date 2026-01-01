@@ -80,7 +80,7 @@ Make sure your device is connected to the internet
 the name of the project folder you want.
 
   PROJECT_NAME=my_project_name
-  ./ai_train_yolo_project_setup.sh $PROJECT_NAME
+  source ai_train_yolo_project_setup.sh $PROJECT_NAME
 
 This will create and populate a new training project in the same
 folder the nepi_ai_training repo is located in.

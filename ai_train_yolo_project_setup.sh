@@ -25,7 +25,7 @@ if [[ -d "$PROJECT_FOLDER" ]]; then
   echo "Project folder allready exists at ${PROJECT_FOLDER}, will update process scripts"
   RSYNC_EXCLUDES="--exclude project_settings.yaml --exclude classes.txt --exclude model_info.yaml"
   echo "Excluding ${RSYNC_EXCLUDES}"
-  rsync -av ${RSYNC_EXCLUDES} $(pwd)/nepi_yolo_detector_training/* ${PROJECT_FOLDER}/
+  rsync -av --include="/*" --exclude="*/" ${RSYNC_EXCLUDES} $(pwd)/nepi_yolo_detector_training/* ${PROJECT_FOLDER}/
   sudo cp -r $(pwd)/TRAIN_CUSTOM_YOLO_AI_MODEL.md ${PROJECT_FOLDER}/
   sudo cp -r $(pwd)/src/nepi_ai_training/* ${PROJECT_FOLDER}/
 

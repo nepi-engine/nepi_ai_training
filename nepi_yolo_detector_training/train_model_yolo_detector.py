@@ -145,13 +145,13 @@ if __name__ == "__main__":
                     print(f"Old Training Folder '{folder}' and its contents deleted successfully.")
                 except OSError as e:
                     print(f"Error: {folder} : {e.strerror}")
-        last_best_file = os.path.join(train_folder,yolo_utils.BEST_FILE_NAME)
-        if os.path.exists(last_best_file):
-            try:
-                os.remove(last_best_file)
-                print(f"Old Best Training file '{last_best_file}' removed.")
-            except Exception as e:
-                print("Failed to delete last_best_file: " + str(last_best_file))
+        # last_best_file = os.path.join(train_folder,yolo_utils.BEST_FILE_NAME)
+        # if os.path.exists(last_best_file):
+        #     try:
+        #         os.remove(last_best_file)
+        #         print(f"Old Best Training file '{last_best_file}' removed.")
+        #     except Exception as e:
+        #         print("Failed to delete last_best_file: " + str(last_best_file))
 
 
         # Update start model

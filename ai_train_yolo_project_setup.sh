@@ -34,12 +34,12 @@ else
   sudo cp -r $(pwd)/nepi_yolo_detector_training/* ${PROJECT_FOLDER}/
   sudo cp -r $(pwd)/TRAIN_CUSTOM_YOLO_AI_MODEL.md ${PROJECT_FOLDER}/
   sudo cp -r $(pwd)/src/nepi_ai_training/* ${PROJECT_FOLDER}/
-  sudo chown -R ${USER}:${USER} $PROJECT_FOLDER
-  sudo chmod -R +x $PROJECT_FOLDER
   echo "Project folder created at ${PROJECT_FOLDER}"
  fi
 
 if [[ -d "$PROJECT_FOLDER" ]]; then
+  sudo chown -R ${USER}:${USER} $PROJECT_FOLDER
+  sudo chmod -R +x $PROJECT_FOLDER
   cd $PROJECT_FOLDER
   ls
 fi

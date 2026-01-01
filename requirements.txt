@@ -1,4 +1,0 @@
-
-declxml
-labelImg
-ultralytics

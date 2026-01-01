@@ -26,11 +26,13 @@ if [[ -d "$PROJECT_FOLDER" ]]; then
   RSYNC_EXCLUDES=" --exclude project_settings.yaml"
   echo "Excluding ${RSYNC_EXCLUDES}"
   rsync -arh ${RSYNC_EXCLUDES} $(pwd)/nepi_yolo_detector_training/* ${PROJECT_FOLDER}/
+  sudo cp -r $(pwd)/TRAIN_CUSTOM_YOLO_AI_MODEL.md ${PROJECT_FOLDER}/
   sudo cp -r $(pwd)/src/nepi_ai_training/* ${PROJECT_FOLDER}/
 
 else
   sudo mkdir $PROJECT_FOLDER
   sudo cp -r $(pwd)/nepi_yolo_detector_training/* ${PROJECT_FOLDER}/
+  sudo cp -r $(pwd)/TRAIN_CUSTOM_YOLO_AI_MODEL.md ${PROJECT_FOLDER}/
   sudo cp -r $(pwd)/src/nepi_ai_training/* ${PROJECT_FOLDER}/
   sudo chown -R ${USER}:${USER} $PROJECT_FOLDER
   sudo chmod -R +x $PROJECT_FOLDER

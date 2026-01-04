@@ -42,6 +42,7 @@ else
     sudo snap install libxml2
     sudo snap install libxslt
     sudo apt install libxml2-dev libxslt1-dev -y
+    sudo python3 -m pip install testresources onnx
     sudo python3 -m pip cache purge
     sudo apt install pyqt5-dev-tools python3-lxml git -y
     sudo apt install python3-venv python3-pip -y

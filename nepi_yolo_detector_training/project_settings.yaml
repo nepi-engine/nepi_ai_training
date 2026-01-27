@@ -1,7 +1,8 @@
 
-
-MODEL_NAME: light_bulb
-DESCRIPTION: light bulb object detector
+FRAMEWORK: yolov8
+BASE_MODEL: yolov8n.pt
+NAME: light_bulb_y8n
+DESCRIPTION: light bulb object detector YoloV8 nano
 CLASSES:
   - Can
   - Lamp
@@ -10,7 +11,7 @@ USE_PERCENT_DATA: 100
 RANDOM_DATA_SIZE: 100
 USE_BEST_MODEL: true 
 
-BASE_MODEL: yolov8n.pt
+
 IMAGE_SIZE: 640
 NUM_EPOCHS: 300 
 BATCH_SIZE: 8

@@ -18,6 +18,7 @@ try:
     import grp
     import pwd    
     import random
+    from pathlib import Path
 
 except Exception as e:
     print("Missing required python modules " + str(e))
@@ -78,6 +79,7 @@ USE_BEST_MODEL_FOR_RETRAIN = True
 class project_yolo_detector:
     
     model_name = ''
+    framework = ''
 
     project_folder = ''
     projects_folder = ''
@@ -95,6 +97,7 @@ class project_yolo_detector:
     img_types = IMAGE_FILE_TYPES
 
     base_model = ''
+    best_model_path = ''
     image_size = 0
     num_epochs = 0
     batch_size = 0
@@ -110,7 +113,6 @@ class project_yolo_detector:
 
     def __init__(self, project_folder = None):
         self.update_project(project_folder)
-
             
     def update_project(self,project_folder = None):
         file_path = os.path.realpath(__file__)
@@ -142,18 +144,23 @@ class project_yolo_detector:
             print("Importing project settings from file: " + str(self.project_file))
             self.project_dict = ai_utils.read_dict_from_file(self.project_file)
             #print("Imported project settings: " + str(self.project_dict))
-            self.model_name = self.project_dict['MODEL_NAME']
+            self.framework = self.project_dict['FRAMEWORK']
+            self.model_name = ai_utils.get_clean_name(self.project_dict['NAME'])
+            self.project_dict['NAME'] = self.model_name
             self.description = self.project_dict['DESCRIPTION']
             self.classes = self.project_dict['CLASSES']
             self.use_percent_data = self.project_dict['USE_PERCENT_DATA']
             self.random_data_size =  self.project_dict['RANDOM_DATA_SIZE']
-            '''
-            if USE_BEST_MODEL_FOR_RETRAIN == True:
-                best_model = get_best_model(self.train_folder)
-                if best_model is not None:
-                    self.project_dict['BASE_MODEL']['name'] = best_model
-            '''
+
             self.base_model = self.project_dict['BASE_MODEL']
+            best_model_path = os.path.join(MODEL_TRAIN_FOLDER,base_model)
+            if USE_BEST_MODEL_FOR_RETRAIN == True:
+                best_model_path = self.get_best_model(self.train_folder)
+                if best_model_path is not None:
+                    self.project_dict['BASE_MODEL']['path'] = best_model_path
+            self.best_model_path = best_model_path  
+
+            
             self.image_size = self.project_dict['IMAGE_SIZE']
             self.num_epochs = self.project_dict['NUM_EPOCHS']
             self.batch_size = self.project_dict['BATCH_SIZE']
@@ -172,6 +179,22 @@ class project_yolo_detector:
             if 'CLASSES_DICT' not in self.project_dict.keys():
                 self.project_dict['CLASSES_DICT'] = ai_utils.create_classes_dict(self.classes)
             self.classes_dict = self.project_dict['CLASSES_DICT']
+
+
+    def get_best_model(self,directory='.'):
+        best_model_path = None
+        root_path = Path(directory)
+        # Use rglob (recursive glob) with "**" pattern for the filename
+        # The pattern should match any path leading to the exact filename
+        # We join "**" and the target filename to create the full pattern
+        pattern = f"**/{BEST_FILE_NAME}"
+        file_list = [path.resolve() for path in root_path.rglob(pattern) if path.is_file()]
+        if len(file_list) > 0:
+           best_model_path = file_list[-1]
+        return best_model_path
+
+
+
 
     def update_classes(self,classes, classes_dict):
         self.project_dict['CLASSES'] = classes
@@ -334,16 +357,18 @@ def update_train_files(project_dict,label_folder,train_folder):
 
 def write_model_yaml_file(project_dict,output_file_path):
     success = False
-    framework = project_dict['BASE_MODEL'].split('.pt')[0][:-1]
     weight_file = os.path.basename(output_file_path).replace('.yaml','.pt')
     ### Create dictionary
     data = {
         'ai_model' : {
             'framework' : {
-                'name' : framework
+                'name' : project_dict['FRAMEWORK']
             },
             'type' : {
                 'name' : MODEL_TYPE
+            },
+            'name' : {
+               'name' : project_dict['NAME']
             },
             'description' : {
                 'name' : project_dict['DESCRIPTION']

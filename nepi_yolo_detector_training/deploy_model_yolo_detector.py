@@ -16,6 +16,8 @@ try:
     import os
     import sys
     import copy
+
+
 except Exception as e:
     print("Missing required python modules " + str(e))
     print("Connect to internet and run the following in this folder")
@@ -58,7 +60,9 @@ if __name__ == '__main__':
     train_folder = project.train_folder
     deploy_folder = project.deploy_folder
     model_name = project.model_name
+    framework = project.framework
     base_model = project.base_model
+    best_model_path = project.best_model_path
     image_size = project.image_size
 
 
@@ -66,7 +70,7 @@ if __name__ == '__main__':
     success = ai_utils.fix_folder_permissions(train_folder,project.user,project.group)
     success = ai_utils.fix_folder_permissions(deploy_folder,project.user,project.group)
     best_model_path = None
-    deploy_name = model_name + '_' + base_model.replace('.pt','') + '_' + str(image_size)
+    deploy_name = model_name + '_' + framework + '_' + str(image_size)
     copy_file_path = os.path.join(deploy_folder,deploy_name+'.pt')
     best_model_path = yolo_utils.copy_best_model(train_folder,copy_file_path)
     if best_model_path is not None:

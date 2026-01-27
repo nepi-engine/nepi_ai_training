@@ -99,7 +99,10 @@ if __name__ == "__main__":
     classes = project.classes
     train_file = project.train_file
 
+    best_model_path = project.best_model_path
+    start_path = train_folder
     start_model = project.base_model
+    
     img_size  = project.image_size
     num_epochs  = project.num_epochs
     batch_size  = project.batch_size
@@ -152,17 +155,18 @@ if __name__ == "__main__":
 
 
         # Update start model
-        copy_file_path = os.path.join(train_folder,yolo_utils.BEST_FILE_NAME)
-        best_model_path = yolo_utils.copy_best_model(train_folder,copy_file_path)
+
         if best_model_path is not None:
-            if os.path.exists(copy_file_path):
+            if os.path.exists(best_model_path):
+               start_path = os.path.dirname(best_model_path)
                start_model = os.path.basename(best_model_path)
 
         ai_utils.write_dict_to_file(project_dict,train_dict_file)
         success = ai_utils.fix_folder_permissions(train_folder,project.user,project.group)
-        print("Starting training with base model: " + str(start_model))
-        if cur_folder == train_folder:
-            model = YOLO(start_model)
+        print("Starting training with base model: " + str(best_model_path))
+        
+        if os.path.exists(best_model_path):
+            model = YOLO(best_model_path)
             #device = get_best_device()
             #print("Training with device: " + str(device))
             #model = model.to(device)

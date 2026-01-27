@@ -86,6 +86,9 @@ def get_user_id(folder = CURRENT_FOLDER):
     #print([self.user, self.group])
     return user,group
 
+def get_clean_name(name, invalid_chars = r'[<>:"/\\|?*\x00-\x1F]', replacement='_'):
+    return re.sub(invalid_chars, replacement, name)
+
 def make_folder(folder_path, user = None, group = None):
     success = False
     try:

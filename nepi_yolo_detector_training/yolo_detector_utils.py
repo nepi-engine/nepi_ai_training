@@ -367,8 +367,8 @@ def write_model_yaml_file(project_dict,output_file_path):
             'type' : {
                 'name' : MODEL_TYPE
             },
-            'name' : {
-               'name' : project_dict['NAME']
+            'display_name' : {
+               'name' : project_dict['DISPLAY_NAME']
             },
             'description' : {
                 'name' : project_dict['DESCRIPTION']
